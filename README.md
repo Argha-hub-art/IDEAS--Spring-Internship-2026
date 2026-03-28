@@ -58,3 +58,35 @@ Format: Folder-based image classification dataset
 Train/: Images used for training the model
 Test/: Images used for model evaluation
 Validation/: Images used to fine-tune and validate the model
+
+
+1. Explore and Understand the Data
+Load image dataset using tools like image_dataset_from_directory.
+Visualize sample images from each class.
+Check the number of images per class to ensure balance.
+Understand image dimensions, color channels, and class labels.
+Load image dataset using tools like image_dataset_from_directory.
+Split data into training, validation, and testing sets.
+tf.keras.utils.image_dataset_from_directory(...)
+Used to load images from a directory where each subfolder represents a class.
+
+path
+Root directory path containing one subdirectory per class.
+
+shuffle=True
+Randomly shuffles the image data. Useful during training to prevent the model from learning the order of the data.
+
+image_size=(128, 128)
+Resizes all loaded images to this target size (width, height).
+This must match the input size expected by the model.
+
+batch_size=32
+Number of images per batch during training.
+This affects memory usage and the frequency of model updates.
+
+validation_split=False
+If set to a float (e.g., 0.2), splits a portion of the data for validation.
+If False, no split is applied.
+
+
+We get Accuracy 95% Under Kunal Gupta Sir
